@@ -3,8 +3,8 @@
 <!-- Launches Jackal Gazebo simulation in an empty world. -->
 
 <launch>
-  <arg name="gui"        default="false"/>
-  <arg name="rviz"       default="false"/>
+  <arg name="gui"        default="true"/>
+  <arg name="rviz"       default="true"/>
   <arg name="ns0"        default="jackal0"/>
   <arg name="ns1"        default="jackal1"/>
   <arg name="config0"    default="front_bumblebee2"/>
