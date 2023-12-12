@@ -11,7 +11,7 @@
   <arg name="pitch" default="0"/>
   <arg name="yaw"   default="0"/>
   <arg name="use_move_base"  default="true"/>
-  <arg name="use_global_ekf" default="false"/>
+  <arg name="use_global_ekf" default="true"/>
   <arg name="use_global_tf"  default="true"/>
 
   <!-- Robot localisation, takes IMU and wheel odometry to form a single localisation

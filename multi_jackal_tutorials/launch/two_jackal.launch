@@ -41,4 +41,7 @@
       <remap from="/move_base_simple/goal" to="/$(arg ns1)/move_base_simple/goal"/>
     </node>
   </group>
+
+  <node name="navigation" pkg="multi_jackal_tutorials" type="navigation.py">
+  </node>
 </launch>
