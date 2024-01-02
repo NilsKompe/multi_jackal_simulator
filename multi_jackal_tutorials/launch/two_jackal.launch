@@ -25,7 +25,7 @@
     <arg name="ns"            value="$(arg ns0)"/>
     <arg name="config"        value="$(arg config0)"/>
     <arg name="config_id"     value="$(arg config0_id)"/>
-    <arg name="use_move_base" value="true"/>
+    <arg name="use_move_base" value="false"/>
   </include>
   <include file="$(find multi_jackal_base)/launch/jackal_base.launch">
     <arg name="ns"            value="$(arg ns1)"/>
