@@ -10,7 +10,7 @@
   <arg name="config0"    default="front_bumblebee2"/>
   <arg name="config0_id" default="0"/>
   <arg name="config1"    default="apriltags"/>
-  <arg name="config1_id" default="1"/>
+  <arg name="config1_id" default="0"/>
   <arg name="world"      default="empty.world"/>
 
   <!-- Start Gazebo with an empty world. -->
@@ -42,6 +42,6 @@
     </node>
   </group>
 
-  <node name="navigation" pkg="multi_jackal_tutorials" type="navigation.py">
-  </node>
+  <!-- <node name="navigation" pkg="multi_jackal_tutorials" type="navigation.py">
+  </node> -->
 </launch>
