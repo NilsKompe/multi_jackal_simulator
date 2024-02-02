@@ -360,6 +360,39 @@
       </joint>
     </xacro:unless>
   </xacro:if>
+    <!-- Mount Enabled -->
+    <!-- <xacro:if value="${tower}">
+      <xacro:camera_mount prefix="${prefix}" tilt="${tilt}"/>
+
+      <joint name="${prefix}_camera_mount_joint" type="fixed">
+        <origin xyz="$(optenv JACKAL_BB2_OFFSET 0 0 0)"
+                rpy="$(optenv JACKAL_BB2_RPY 0 0 0)" />
+        <parent link="${parent}" />
+        <child link="${prefix}_camera_mount" />
+      </joint>
+
+      <joint name="${prefix}_camera_bracket_joint" type="fixed">
+        <origin xyz="0.007 0 0.02450" rpy="0 0 0" />
+        <parent link="${prefix}_camera_beam" />
+        <child link="${prefix}_camera" />
+      </joint>
+    </xacro:if> -->
+    <!-- Mount Disabled -->
+    <!-- <xacro:unless value="${tower}">
+      <link name="${prefix}_camera_base" type="fixed"/>
+      <joint name="${prefix}_camera_base_joint" type="fixed">
+        <origin xyz="$(optenv JACKAL_BB2_OFFSET 0 0 0)"
+                rpy="$(optenv JACKAL_BB2_RPY 0 0 0)" />
+        <parent link="${parent}" />
+        <child link="${prefix}_camera_base" />
+      </joint>
+      <joint name="${prefix}_camera_joint" type="fixed">
+        <origin xyz="0 0 0.018" rpy="0 0 0" />
+        <parent link="${prefix}_camera_base" />
+        <child link="${prefix}_camera" />
+      </joint>
+    </xacro:unless>
+  </xacro:if> -->
 
   <!-- Fender Accessories --> 
   <xacro:if value="$(optenv JACKAL_FRONT_ACCESSORY_FENDER 0)">

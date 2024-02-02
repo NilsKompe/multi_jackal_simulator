@@ -26,22 +26,25 @@
     <arg name="config"        value="$(arg config0)"/>
     <arg name="config_id"     value="$(arg config0_id)"/>
     <arg name="use_move_base" value="false"/>
+    <arg name="joystick" value="true"/>
   </include>
   <include file="$(find multi_jackal_base)/launch/jackal_base.launch">
     <arg name="ns"            value="$(arg ns1)"/>
     <arg name="config"        value="$(arg config1)"/>
     <arg name="config_id"     value="$(arg config1_id)"/>
     <arg name="use_move_base" value="true"/>
-    <arg name="x"             value="2"/>
+    <arg name="x"             value="8"/>
+    <arg name="joystick" value="false"/>
+
   </include>
   
   <!-- View in RVIZ. -->
   <group if="$(arg rviz)">
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find multi_jackal_tutorials)/rviz/two_jackal.rviz" >
-      <remap from="/move_base_simple/goal" to="/$(arg ns1)/move_base_simple/goal"/>
+      <remap from="/move_base_simple/goal" to="/$(arg ns0)/move_base_simple/goal"/>
     </node>
   </group>
 
-  <!-- <node name="navigation" pkg="multi_jackal_tutorials" type="navigation.py">
-  </node> -->
+  <node name="navigation" pkg="multi_jackal_tutorials" type="navigation.py">
+  </node>
 </launch>

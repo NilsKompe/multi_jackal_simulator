@@ -19,10 +19,12 @@
   <arg name="use_global_ekf" default="false"/> <!-- Uses GPS instead of a static 0,0,0 TF -->
 	<arg name="gps_rate"  default="1"/>
   <arg name="gps_drift" default="0.0001"/>
+  <arg name="joystick" default="true"/>
   
   <!-- Launch the control portion of the Jackal robot. -->
   <include file="$(find multi_jackal_control)/launch/jackal_control.launch">
     <arg name="ns" value="$(arg ns)"/>
+    <arg name="joystick" value="$(arg joystick)"/>
   </include>
 
   <!-- Generate the model for gazebo and publish the robots joint states. -->
