@@ -328,7 +328,7 @@
     <xacro:BB2-08S2C-38 frame="${prefix}_camera" name="${name}" />
 
     <!-- Mount Enabled -->
-    <xacro:if value="${tower}">
+    <xacro:unless value="${tower}">
       <xacro:camera_mount prefix="${prefix}" tilt="${tilt}"/>
 
       <joint name="${prefix}_camera_mount_joint" type="fixed">
@@ -343,9 +343,10 @@
         <parent link="${prefix}_camera_beam" />
         <child link="${prefix}_camera" />
       </joint>
-    </xacro:if>
+    <!-- </xacro:if> -->
+    </xacro:unless>
     <!-- Mount Disabled -->
-    <xacro:unless value="${tower}">
+    <xacro:if value="${tower}">
       <link name="${prefix}_camera_base" type="fixed"/>
       <joint name="${prefix}_camera_base_joint" type="fixed">
         <origin xyz="$(optenv JACKAL_BB2_OFFSET 0 0 0)"
@@ -358,7 +359,9 @@
         <parent link="${prefix}_camera_base" />
         <child link="${prefix}_camera" />
       </joint>
-    </xacro:unless>
+    <!-- </xacro:unless> -->
+    </xacro:if>
+
   </xacro:if>
     <!-- Mount Enabled -->
     <!-- <xacro:if value="${tower}">

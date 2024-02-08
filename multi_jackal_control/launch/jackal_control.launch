@@ -39,7 +39,7 @@
     <node pkg="joy" type="joy_node" name="joy_node" />
 
     <node pkg="teleop_twist_joy" type="teleop_node" name="teleop_twist_joy">
-      <remap from="cmd_vel" to="jackal0/jackal_velocity_controller/cmd_vel" />
+      <remap from="cmd_vel" to="$(arg ns)/jackal_velocity_controller/cmd_vel" />
     </node>
   </group>
         
