@@ -26,13 +26,16 @@
     <arg name="config"        value="$(arg config0)"/>
     <arg name="config_id"     value="$(arg config0_id)"/>
     <arg name="use_move_base" value="false"/>
+    <arg name="use_global_ekf" value="false"/>
     <arg name="joystick" value="true"/>
+    <arg name="x" value="0"/>
   </include>
   <include file="$(find multi_jackal_base)/launch/jackal_base.launch">
     <arg name="ns"            value="$(arg ns1)"/>
     <arg name="config"        value="$(arg config1)"/>
     <arg name="config_id"     value="$(arg config1_id)"/>
     <arg name="use_move_base" value="true"/>
+    <arg name="use_global_ekf" value="false"/>
     <arg name="x"             value="8"/>
     <arg name="joystick" value="false"/>
 
@@ -45,6 +48,11 @@
     </node>
   </group>
 
-  <node name="navigation" pkg="multi_jackal_tutorials" type="navigation.py">
-  </node>
+  <!-- <node name="navigation" pkg="multi_jackal_tutorials" type="navigation.py">
+  </node> -->
+  <!-- Start all launch files needed for mrekf slam -->
+  <include file="$(find ml_detector)/launch/marker_detect.launch">
+  </include>
+  <include file="$(find slam)/launch/display_landmarks.launch">
+  </include>
 </launch>

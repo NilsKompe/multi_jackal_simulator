@@ -11,13 +11,27 @@
       <origin xyz="0 0 0.15"/>
       <geometry>
         <mesh filename="package://multi_jackal_description/meshes/apriltags/apriltags$(arg config_id).dae" />
+      <!-- <ambient>0.1 0.1 0.1 1</ambient>
+      <diffuse>0 0 0 0</diffuse>
+      <specular>1 1 1 1</specular> 
+      <emissive>0.5 0.5 0.5 1</emissive>  -->
       </geometry>
     </visual>
     <collision>
+      <!-- <ambient>0.1 0.1 0.1 1</ambient>
+      <diffuse>0 0 0 0</diffuse>
+      <specular>1 1 1 1</specular> 
+      <emissive>0.5 0.5 0.5 1</emissive>  -->
       <origin xyz="0 0 0.15"/>
       <geometry>
         <box size="0.3 0.3 0.3" />
       </geometry>
+    <!-- <material>
+      <ambient>0.1 0.1 0.1 1</ambient>
+      <diffuse>0 0 0 0</diffuse>
+      <specular>1 1 1 1</specular> 
+      <emissive>0.5 0.5 0.5 1</emissive> 
+    </material> -->
     </collision>
   </link>
   
