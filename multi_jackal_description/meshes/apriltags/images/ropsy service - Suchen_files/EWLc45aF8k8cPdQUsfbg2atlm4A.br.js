@@ -1,0 +1,1 @@
+(function(){var u=_d.querySelectorAll("#b_results .b_algo"),t,f,n,i,e,r;if(u!=null)for(t=0;t<u.length;t++)f=u[t],n=f.children,!!n&&n.length>1&&!!n[0]&&!!n[1]&&(i=n[0],e=n[1],i.classList.contains("b_tpcn")&&e.tagName==="H2"&&(r=sj_ce("div",null,"b_algoHover"),f.insertBefore(r,i),r.appendChild(i),r.appendChild(e)))})()

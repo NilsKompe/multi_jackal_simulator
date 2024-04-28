@@ -7,6 +7,8 @@ import rospy
 import numpy as np
 from numpy.linalg import norm
 from geometry_msgs.msg import PoseWithCovarianceStamped
+import tf2_ros
+
 #import shapely.geometry
 #import cfg
 #import init_map
@@ -14,17 +16,19 @@ from geometry_msgs.msg import PoseWithCovarianceStamped
 class navigation():
     def __init__(self):
         # Subscriber to listen to current robot position
-        rospy.Subscriber('jackal1/odometry/local_filtered', Odometry, self.callback_move_base_feedback) # jackal_velocity_controller odometry/filtered
+        # rospy.Subscriber('jackal1/odometry/local_filtered', Odometry, self.callback_move_base_feedback) # jackal_velocity_controller odometry/filtered
         # Publisher to publish move_base goals
         self.move_base = actionlib.SimpleActionClient('jackal1/move_base', MoveBaseAction)
         self.move_base.wait_for_server()
         self.offset_pos = [0,0,0]
         self.offset_ori = [0,0,0,0]
         self.offset_set = False
+        self.tfBuffer = tf2_ros.Buffer()
+        tf2_ros.TransformListener(self.tfBuffer)
 
     def pub_goal_pos(self, x, y): #todo use normal pub
         goal = MoveBaseGoal()
-        goal.target_pose.header.frame_id = "jackal1/odom"
+        goal.target_pose.header.frame_id = "map"
         goal.target_pose.header.stamp = rospy.Time.now()
         goal.target_pose.pose.position.x = x
         goal.target_pose.pose.position.y = y
@@ -50,7 +54,8 @@ class navigation():
 
     def check_goal_reached(self, x_goal, y_goal):
         try:
-            dist = norm(np.array([x_goal, y_goal]) - np.array([self.pos.x, self.pos.y]))
+            # dist = norm(np.array([x_goal, y_goal]) - np.array([self.pos.x, self.pos.y]))
+            dist = norm(np.array([x_goal, y_goal]) - np.array(self.get_current_pose()))
             if dist < 0.3:
                 return True
             else:
@@ -58,6 +63,14 @@ class navigation():
         except:
             return False
 
+    def get_current_pose(self):
+        try: 
+            current_position = self.tfBuffer.lookup_transform("map","jackal1/base_link",rospy.Time.now(),rospy.Duration(1,0)).transform.translation
+            a = 1
+            return [current_position.x,current_position.y]
+        except:
+            pass
+        
     def navigate_point_list(self, area_poly):
         for point in area_poly:
             self.pub_goal_pos(point[0], point[1])
@@ -137,6 +150,8 @@ class navigation():
 if __name__ == "__main__":
     rospy.init_node("navigation", anonymous=True)
     navigate = navigation()
-    while 1:
-        point_list = [(1,1),(3,2),(2,3)]
+    point_list = [(2,-4),(5,-2.5),(4,-1)]   
+    navigate.navigate_point_list(point_list)
+    while True:
+        point_list = [(2,-4),(5,-2.5),(4,-1)]   
         navigate.navigate_point_list(point_list)

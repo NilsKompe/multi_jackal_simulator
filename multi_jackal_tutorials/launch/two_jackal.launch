@@ -11,7 +11,7 @@
   <arg name="config0_id" default="0"/>
   <arg name="config1"    default="apriltags"/>
   <arg name="config1_id" default="0"/>
-  <arg name="world"      default="empty.world"/>
+  <arg name="world"      default="ArUcoMarker.world"/>
 
   <!-- Start Gazebo with an empty world. -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -36,7 +36,8 @@
     <arg name="config_id"     value="$(arg config1_id)"/>
     <arg name="use_move_base" value="true"/>
     <arg name="use_global_ekf" value="false"/>
-    <arg name="x"             value="8"/>
+    <arg name="x"             value="4"/>
+    <arg name="y"             value="-1"/>
     <arg name="joystick" value="false"/>
 
   </include>
@@ -48,11 +49,10 @@
     </node>
   </group>
 
-  <!-- <node name="navigation" pkg="multi_jackal_tutorials" type="navigation.py">
-  </node> -->
+
   <!-- Start all launch files needed for mrekf slam -->
   <include file="$(find ml_detector)/launch/marker_detect.launch">
   </include>
-  <include file="$(find slam)/launch/display_landmarks.launch">
-  </include>
+  <!-- <include file="$(find slam)/launch/display_landmarks.launch"> -->
+  <!-- </include> -->
 </launch>

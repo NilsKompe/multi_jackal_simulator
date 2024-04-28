@@ -12,22 +12,22 @@
   </asset>
   <library_images>
     <image id="tag0__png" name="tag0__png">
-      <init_from>images/board_4.png</init_from>
+      <init_from>images/board_1.png</init_from>
     </image>
     <image id="tag1__png" name="tag1__png">
-      <init_from>images/board_4.png</init_from>
+      <init_from>images/board_1.png</init_from>
     </image>
     <image id="tag2__png" name="tag2__png">
-      <init_from>images/board_4_rotated.png</init_from>
+      <init_from>images/board_1_rotated.png</init_from>
     </image>
     <image id="tag3__png" name="tag3__png">
-      <init_from>images/board_4_rotated.png</init_from>
+      <init_from>images/board_1_rotated.png</init_from>
     </image>
     <image id="tag4__png" name="tag4__png">
-      <init_from>images/board_4_rotated.png</init_from>
+      <init_from>images/board_1_rotated.png</init_from>
     </image>
     <image id="tag5__png" name="tag5__png">
-      <init_from>images/board_4_rotated.png</init_from>
+      <init_from>images/board_1_rotated.png</init_from>
     </image>
   </library_images>
   <library_effects>
