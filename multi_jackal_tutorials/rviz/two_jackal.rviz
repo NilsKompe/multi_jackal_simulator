@@ -5,6 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /Grid1
       Splitter Ratio: 0.5638890266418457
     Tree Height: 375
   - Class: rviz/Selection
@@ -47,102 +48,34 @@ Visualization Manager:
         Y: 0
         Z: 0
       Plane: XY
-      Plane Cell Count: 10
+      Plane Cell Count: 17
       Reference Frame: <Fixed Frame>
       Value: true
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        chassis_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fenders_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        front_camera:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        front_camera_base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_camera_optical:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_left_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        front_mount:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_right_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        imu_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        mid_mount:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        navsat_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rear_left_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rear_mount:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rear_right_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: Jackal0-RobotModel
       Robot Description: jackal0/robot_description
       TF Prefix: jackal0
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Class: rviz/InteractiveMarkers
       Enable Transparency: true
-      Enabled: true
+      Enabled: false
       Name: Jackal0-InteractiveMarkers
       Show Axes: false
       Show Descriptions: false
       Show Visual Aids: false
       Update Topic: /jackal0/twist_marker_server/update
-      Value: true
+      Value: false
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
@@ -220,134 +153,34 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        ar_marker_0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        ar_marker_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        ar_marker_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        ar_marker_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        ar_marker_4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        ar_marker_5:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        chassis_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        fenders_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        front_left_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        front_mount:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_right_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        imu_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        mid_mount:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        navsat_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rear_left_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rear_mount:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rear_right_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tag_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: Jackal1-RobotModel
       Robot Description: jackal1/robot_description
       TF Prefix: jackal1
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Class: rviz/InteractiveMarkers
       Enable Transparency: true
-      Enabled: true
+      Enabled: false
       Name: Jackal1-InteractiveMarkers
       Show Axes: false
       Show Descriptions: false
       Show Visual Aids: false
       Update Topic: /jackal1/twist_marker_server/update
-      Value: true
+      Value: false
     - Class: rviz/Marker
       Enabled: true
       Marker Topic: visualization_marker
       Name: Marker
       Namespaces:
-        10: true
-        11: true
-        12: true
-        13: true
-        14: true
-        15: true
-        16: true
-        17: true
-        18: true
-        2: true
-        3: true
-        4: true
-        5: true
-        6: true
-        7: true
-        8: true
-        9: true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/Image
@@ -390,7 +223,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 11.572397232055664
+      Distance: 11.528310775756836
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -398,17 +231,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 2.7912087440490723
-        Y: -1.3184608221054077
-        Z: 1.5052459239959717
+        X: 0.012946649454534054
+        Y: -0.11083295941352844
+        Z: 1.4966586828231812
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.8954001665115356
+      Pitch: 1.5697963237762451
       Target Frame: <Fixed Frame>
-      Yaw: 4.957247257232666
+      Yaw: 4.707240104675293
     Saved: ~
 Window Geometry:
   Displays:

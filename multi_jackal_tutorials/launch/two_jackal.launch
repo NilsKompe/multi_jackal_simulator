@@ -29,6 +29,8 @@
     <arg name="use_global_ekf" value="false"/>
     <arg name="joystick" value="true"/>
     <arg name="x" value="0"/>
+    <!-- <arg name="x" value="1.2"/>
+    <arg name="yaw" value="3.1"/> -->
   </include>
   <include file="$(find multi_jackal_base)/launch/jackal_base.launch">
     <arg name="ns"            value="$(arg ns1)"/>
@@ -37,7 +39,7 @@
     <arg name="use_move_base" value="true"/>
     <arg name="use_global_ekf" value="false"/>
     <arg name="x"             value="4"/>
-    <arg name="y"             value="-1"/>
+    <arg name="y"             value="-4"/>
     <arg name="joystick" value="false"/>
 
   </include>
