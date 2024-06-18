@@ -25,12 +25,18 @@
     <arg name="ns"            value="$(arg ns0)"/>
     <arg name="config"        value="$(arg config0)"/>
     <arg name="config_id"     value="$(arg config0_id)"/>
-    <arg name="use_move_base" value="false"/>
+    <arg name="use_move_base" value="true"/>
     <arg name="use_global_ekf" value="false"/>
     <arg name="joystick" value="true"/>
-    <arg name="x" value="0"/>
-    <!-- <arg name="x" value="1.2"/>
-    <arg name="yaw" value="3.1"/> -->
+
+    <!-- for dynamic ekf -->
+    <arg name="x" value="-1.2"/> 
+    <arg name="y" value="-3.39"/>
+    <arg name="yaw" value="1.2"/>
+
+    <!-- for only dynamic lm observation -->
+    <!-- <arg name="x" value="2"/> 
+    <arg name="y" value="-3"/> -->
   </include>
   <include file="$(find multi_jackal_base)/launch/jackal_base.launch">
     <arg name="ns"            value="$(arg ns1)"/>
@@ -38,9 +44,19 @@
     <arg name="config_id"     value="$(arg config1_id)"/>
     <arg name="use_move_base" value="true"/>
     <arg name="use_global_ekf" value="false"/>
-    <arg name="x"             value="4"/>
-    <arg name="y"             value="-4"/>
     <arg name="joystick" value="false"/>
+    <!-- for basic ekf world -->
+    <!-- <arg name="x"             value="4"/> 
+    <arg name="y"             value="-4"/>  -->
+
+    <!-- for dynamic ekf world -->
+    <arg name="x" value="-0.5"/> 
+    <arg name="y" value="-1"/>
+    <arg name="yaw" value="3"/>
+
+    <!-- for only dynamic lm observation -->
+    <!-- <arg name="x" value="5"/> 
+    <arg name="y" value="-3"/> -->
 
   </include>
   

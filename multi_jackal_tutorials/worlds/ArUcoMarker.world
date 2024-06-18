@@ -9,6 +9,7 @@
     <include>
       <uri>model://ground_plane</uri>
     </include>
+    <!-- All marker blocks -->
     <include>
       <uri>model://AruCo_Block_2</uri>
       <name>AruCo_Block_2</name>
@@ -41,7 +42,6 @@
       <uri>model://AruCo_Block_9</uri>
       <name>AruCo_Block_9</name>
     </include>
-      <!-- just spawning 10 and 11 is good for testing -->
     <include> 
       <uri>model://AruCo_Block_10</uri>
       <name>AruCo_Block_10</name>
